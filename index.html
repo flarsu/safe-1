@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-firestore.js"></script>
+
+    <meta charset="utf-8">
+  <title>INNERVE 4.0</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <link href="lib/venobox/venobox.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+      <script src="https://www.google.com/reCAPTCHA/api.js" async defer></script>
+
+
+
+  <!-- =======================================================
+    Theme Name: TheInNerve
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body >
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header" style="height: 90px;">
+    <div id="logo" class="pull-left" style="margin-left:30px;">
+      <h1 style="color: white;font-size: 20px;">InNerve 4.0</h1></div>
+    <div class="container">
+
+        <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
+<!--         <a href="#intro" class="scrollto"><img src="img/innerve.png" alt="" title=""></a>
+ -->
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu" >
+          <li class="menu-active"><a href="#intro">Home</a></li>
+          <li><a href="#about">About</a></li>
+
+          <li><a href="#buy-tickets">Themes</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="docs/participant.pdf" download target="_blank"> Brochure</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#speakers">Team</a></li>
+          <!--  <li><a href="#supporters">Sponsors</a></li> -->
+          <li><a href="#footer">Contact</a></li>&nbsp;
+          
+            <a><button onclick="document.getElementById('id03').style.display='block';document.getElementById('id01').style.display='none';document.getElementById('id02').style.display='none';" class="buy-tickets" id="registerButton"><li class="buy-tickets" style="width: 9rem;height: 2rem;padding: 0.25rem;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Register</li></button></a>
+          
+          <li>&nbsp;&nbsp;&nbsp;</li>
+          <a>
+            <button
+                onclick="document.getElementById('id02').style.display='block';document.getElementById('id01').style.display='none';document.getElementById('id03').style.display='none';" class="buy-tickets"
+                id="sponsorButton"><li class="buy-tickets" style="width: 9rem;height: 2rem;padding: 0.25rem;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Sponsor Us</li></button>
+          </a>
+          
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <div class="sticky-container" id="msticky">
+    <ul class="sticky">
+      <li>
+        <a href="https://www.facebook.com/innerve24hrs/" target="_blank"> <img src="img/fb.png" class="sbar" id="nsbar"></a>
+      </li>
+      <li>
+        <a href="https://twitter.com/innerve24hrs" target="_blank"> <img src="img/twitter.png" class="sbar" id="nsbar"></a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/company/open-source-software-club/" target="_blank"> <img src="img/lin.png" class="sbar" id="nsbar"></a>
+      </li>
+      <li>
+        <a href="https://github.com/aitoss" target="_blank"> <img src="img/github.png" class="sbar" id="nsbar" style="border-radius: 10%;"></a>
+      </li>
+
+    </ul>
+  </div>
+
+<!--==========================
+    Modal
+  ============================-->
+<div id="id03" class="modal modal_register" style="background-color:rgb(255, 255, 255,0.8);width: 50%;margin-left: 26%;padding-left: 10%;padding-top: 7%;height: 50%;margin-top: 10%;border-radius: 5%;">
+  <h1><b>Please Select Your Location</b></h1>
+  <button class="buy-tickets" style="width: 70%;" onclick="document.getElementById('id03').style.display='none';document.getElementById('id02').style.display='none';document.getElementById('id01').style.display='block';">INSIDE PUNE</button>
+  <button class="buy-tickets" style="width: 70%;" onclick="window.location.href = 'register/index.html';">OUTSIDE PUNE</button>
+
+</div>
+
+
+
+
+  <div id="id01" class="modal">
+
+    <form class="modal-content animate" method="POST" id="register">
+
+      <div class="container">
+
+        <label for="uname"><b>Name</b></label>
+        <input type="text" placeholder="Name" name="uname" id="1" required>
+
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" name="email" id="sub" required>
+
+        <label for="college"><b>College</b></label>
+        <input type="text" placeholder="Enter College" name="college" id="college" required>
+
+        <label for="phno"><b>Phone number</b></label>
+        <input type="text" placeholder="Enter your phone number" name="phno" id="2" required>
+
+        
+
+        <button type="submit" id="register_submit">SUBMIT</button>
+
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+
+           <p text-align="center">**Registrations are not open yet.<br>Enter your details we will contact you as soon as registration starts. <span ><br> <a href="#footer" onclick="document.getElementById('id01').style.display='none'">For more info</a></span>**</p>
+
+
+      </div>
+    </form>
+  </div>
+
+
+  <div id="id02" class="modal modal_new">
+    <form class="modal-content animate" method="POST" id="sponsor_btn">
+     <div class="container">
+        <label><b>Drop your email, we will reach you soon:</b></label>
+        <input type="email" placeholder="Enter Email" id="sponsoremail" required>
+        <button type="submit" id="sponsorsend" >SEND</button>
+   </div>
+</form>
+ </div>
+
+
+    
+
+  <!--==========================
+    Intro Section
+  ============================-->
+
+  <section id="intro">
+
+<div id="particles-js"></div>
+      <div class="radial-gradient"></div>
+
+
+
+
+    <div class="intro-container wow fadeIn" id="bada">
+
+      <div class="container">
+          <div class="row nvbe">
+            <div class="col-lg-6">
+                <div id="typed-strings"><p>INNERVE 4.0</p></div>
+                <h1 class="mb-4 pb-0 ns"><div id="tag">Pune's Biggest  Hackathon</div><br><h1><span id="typed" class="innervew" id="innerveid"></span></h1><br><h1 style="font-size: 35px;">nerve to innovate</h1></h1>
+                 <p class="mb-4 pb-0">October 2019, Army Institute Of Technology, Pune</p>
+                 <button id="btn" class="btn-grad" style="width: 50%;"><a href="docs/participant.pdf" download target="_blank"><span style="color: white;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size: 20px;"><b>Brochure</b></span></a></button>
+            </div>
+            <div class="col-lg-4" style="margin-top: -5%;" id="innerve_img">
+                <img src="img/innerve.png" alt="" >
+            </div>
+            
+          </div>
+        </div>
+
+    </div>
+  </section>
+
+  <main id="main chota">
+
+    <!--==========================
+      About Section
+    ============================-->
+    <section id="about">
+
+      <div class="container">
+        <div class="row">
+          <img src="img/rocket.png" height="130px" width="130px" style="z-index: 0;">
+          <div class="col-lg-6">
+            <h2>About The Event</h2>
+            <p>Innerve 2k19 Hackathon provides you the platform to showcase your ideas and technical skills at a recognized level. This
+            is the perfect opportunity to get those brilliant ideas out of your amazing minds and onto the computer screens. Coming
+            again this year Innerve brings you with more interesting and challenging problem statements than ever before. So get
+            ready for Innerve 4.0 to exhilarate you with newer ideas,more rewards and a fun packed experience.</p>
+          </div>
+          <div class="col-lg-4">
+           <h1 class="animated pulse infinite" style="color: white;margin-top: 10%;margin-left: 8%;color: yellowgreen">Prizes Worth 3 Lacs +</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--==========================
+          Themes  Section
+        ============================-->
+    <section id="buy-tickets" class="section-with-bg wow fadeInUp" style="background-image:url(img/theme.svg);background-position: center;background-repeat: no-repeat;background-size: cover;"  >
+      <div class="container">
+
+        <div class="section-header">
+          <h2 style="color:white;">Themes</h2>
+          <p style="color: white;">Last Year Themes</p>
+        </div>
+
+         
+<div class="row">
+                  <div class="image-flip col-lg-4" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                      <div class="frontside">
+                        <div class="card" style="width:20rem;">
+                          <img class="card-img-top img- fluid" src="img/auto.jpg" height="400em"
+                            alt="card image">
+
+                        </div>
+                      </div>
+                      <div class="backside" style="background-color: black;height: 25em;padding:1.5em;width:20rem;">
+                        <h1 style="text-align: center;color: #f5f5f5;">Theme 1</h1>
+                         <span style="color: white;word-spacing: 4px;letter-spacing: 1px;">Mission to help developers automate repetitive processes and to increase employee productivity.
+                        A world of devices connected by internet opens up opportunities for us that were previously unthinkable.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="image-flip col-lg-4" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                      <div class="frontside">
+                        <div class="card" style="width:20rem;">
+                          <img class="card-img-top img- fluid" src="img/Blockchain.jpg" height="400em" alt="card image">
+
+                        </div>
+                      </div>
+                      <div class="backside" style="background-color: black;height: 25em;padding:1.5em;width:20rem;">
+                        <h1 style="text-align: center;color: #f5f5f5;">Theme 2</h1>
+                        <span style="color: white;word-spacing: 4px;letter-spacing: 1px;">Blockchain, is envisioned to revolutionize human society over the coming decades in ways yet unimagined.
+                        Block chain technology provides new infrastructure to build the next innovative applications beyond crypto currencies,
+                        driving profound, positive changes across business, communities and society.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="image-flip col-lg-4" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                      <div class="frontside">
+                        <div class="card" style="width:20rem;">
+                          <img class="card-img-top img- fluid" src="img/ai.png" height="400em" alt="card image">
+
+                        </div>
+                      </div>
+                      <div class="backside" style="background-color: black;height: 25em;padding:1.5em;width:20rem;">
+                        <h1 style="text-align: center;color: #f5f5f5;">Theme 3</h1>
+                        <span style="color: white;word-spacing: 4px;letter-spacing: 1px;">With the help of AI. Not only it helps in increasing organizational efficiency, but it also reduces the possibility of
+                        any critical error. AI helps to detect irregular patterns like payment fraud and alert the firm about any suspicious
+                        activity.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="image-flip col-lg-4" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                      <div class="frontside">
+                        <div class="card" style="width:20rem;">
+                          <img class="card-img-top img- fluid" src="img/health.jpg" height="400em" alt="card image">
+
+                        </div>
+                      </div>
+                      <div class="backside" style="background-color: black;height: 25em;padding:1.5em;width:20rem;">
+                        <h1 style="text-align: center;color: #f5f5f5;">Theme 4</h1>
+                        <span style="color: white;word-spacing: 4px;letter-spacing: 1px;">Looking at Healthcare in a completely new way - focusing on earlier, pre-symptomatic disease detection and prevention,
+                        instead of late diagnosis - helping clinicians access more information and intervene sooner with targeted treatments so
+                        their patients can lead longer, fuller lives.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="image-flip col-lg-4" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                      <div class="frontside">
+                        <div class="card" style="width:20rem;">
+                          <img class="card-img-top img- fluid" src="img/sec.jpg" height="400em" alt="card image">
+
+                        </div>
+                      </div>
+                      <div class="backside" style="background-color: black;height: 25em;padding:1.5em;width:20rem;">
+                        <h1 style="text-align: center;color: #f5f5f5;">Theme 5</h1>
+                        <span style="color: white;word-spacing: 4px;letter-spacing: 1px;">Develop next generation security apps right from SCRATCH or based on the -CONTROL: A cryptographic Digital Control
+                        Platform. Participants will be provided access to -SDK and -ADAPTER with API with documentation which can help build
+                        security apps 2.0.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="image-flip col-lg-4" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                      <div class="frontside">
+                        <div class="card" style="width:20rem;">
+                          <img class="card-img-top img- fluid" src="img/scity.jpg" height="400em" alt="card image">
+
+                        </div>
+                      </div>
+                      <div class="backside" style="background-color: black;height: 25em;padding:1.5em;width:20rem;">
+                        <h1 style="text-align: center;color: #f5f5f5;">Theme 6</h1>
+                        <span style="color: white;word-spacing: 4px;letter-spacing: 1px;">We are letting the participants to take an un-orthodox approach for fast-paced growth and submit a development plan for
+                        betterment of the cities.
+                        This will let the participants to understand their challenges and by engaging with experts to get insights and solutions
+                        for a smarter way of developing city.</span>
+                      </div>
+                    </div>
+                  </div>
+</div>
+</section>
+                
+              </div>
+            </div>
+          </div>
+                 
+
+
+
+    
+
+    <!--==========================
+      Venue Section
+    ============================-->
+    <div style="background-image:url(img/color.svg);background-position: center;background-repeat: no-repeat;background-size: cover;">
+    <section id="venue" class="wow fadeInUp">
+
+      <div class="container-fluid">
+
+        <div class="section-header">
+          <h2 style="color: white;">Event Venue</h2>
+          <p style="color: white;">Event venue location info and gallery</p>
+        </div>
+
+        <div class="row no-gutters">
+          <div class="col-lg-6 venue-map">
+            <iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.2698969083467!2d73.87289781482937!3d18.606926387358733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c70090000001%3A0x160a20f3d0273495!2sArmy+Institute+of+Technology!5e0!3m2!1sen!2sin!4v1563003172220!5m2!1sen!2sin"
+						 frameborder="0" style="border:0;" allowfullscreen></iframe>
+          </div>
+
+          <div class="col-lg-6 venue-info">
+            <div class="row justify-content-center">
+              <div class="col-11 col-lg-8">
+                <h3>Army Institute Of Technology, Pune</h3>
+                  <h3>The Long Awaited InNerve 4.0 is Here...</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      
+      </div>
+
+    </section>
+
+    
+<!-- gallary -->
+   
+  <section id="gallery" class="wow fadeInUp">
+  
+    <div class="container" >
+      <div class="section-header">
+        <h2>Gallery</h2>
+        <p style="color:salmon;">Check our gallery from the recent events</p>
+      </div>
+    </div>
+  
+    <div class="owl-carousel gallery-carousel" style="z-index: 0;">
+      <a href="img/gallery/1.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/1.jpg" alt=""></a>
+      <a href="img/gallery/2.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/2.jpg" alt=""></a>
+      <a href="img/gallery/3.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/3.jpg" alt=""></a>
+      <a href="img/gallery/4.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/4.jpg" alt=""></a>
+      <a href="img/gallery/5.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/5.jpg" alt=""></a>
+      <a href="img/gallery/6.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/6.jpg" alt=""></a>
+      <a href="img/gallery/7.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/7.jpg" alt=""></a>
+      <a href="img/gallery/9.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/9.jpg" alt=""></a>
+      <a href="img/gallery/10.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/10.jpg" alt=""></a>
+      <a href="img/gallery/11.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/11.jpg" alt=""></a>
+    </div>
+  
+  </section>
+  </div>
+
+    <!--==========================
+      F.A.Q Section
+    ============================-->
+    <section id="faq" class="wow fadeInUp" style="background-image:url(img/faq.svg);background-position: center;background-repeat: no-repeat;background-size: cover;">
+
+      <div class="container">
+
+        <div class="section-header">
+          <h2>F.A.Q </h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+              <ul id="faq-list">
+
+                <li>
+                  <a data-toggle="collapse" class="collapsed" href="#faq1" style="color: black;">What are the dates and registration fees for Hackathon ? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq1" class="collapse" data-parent="#faq-list">
+                    <p style="color: white">
+                        The event will be organized on 1st, 2nd and 3rd October. There is no registration fees for the event but Rs.100 per team has to be submitted while registering as an assurance amount which will be returned to the team on 1st October.                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-toggle="collapse" href="#faq2" class="collapsed" style="color: black;">Do I need to have any specific qualifications to be a participant for the Hackathon? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq2" class="collapse" data-parent="#faq-list">
+                    <p style="color: white">
+You love to code, you are more than welcome to participate in the Hackathon.                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-toggle="collapse" href="#faq3" class="collapsed" style="color: black;">What are the accomodation facilities and will travel allowances be provided ? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq3" class="collapse" data-parent="#faq-list">
+                    <p style="color: black">
+Accommodation will be provided to all the teams coming from outside Pune.                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-toggle="collapse" href="#faq4" class="collapsed" style="color: black;">How to reach the location of hackathon? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq4" class="collapse" data-parent="#faq-list">
+                    <p style="color:black;">
+The hackathon will be conducted in our college itself - you can refer the map at the Event Venue section of the page.                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-toggle="collapse" href="#faq5" class="collapsed" style="color: black;">For further Queries  <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq5" class="collapse" data-parent="#faq-list">
+                    <p style="color:black;">
+<a href="#footer" style="color: black;display: inline;text-decoration: none;font-family:serif;">Click here.</a>                   </p>
+                  </div>
+                </li>
+
+
+              </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    
+
+    <!--==========================
+          Speakers Section
+        ============================-->
+    <section id="speakers" class="wow fadeInUp" style="background-image:url(img/team.svg);background-position: center;background-repeat: no-repeat;background-size: cover;">
+      <div class="container">
+        <div class="section-header">
+          <h2>Team Leaders</h2>
+          <p style="color:black; ">Our Superman of InNerve</p>
+        </div>
+      </div>
+
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 speaker">
+          <center><img src="img/speakers/2.jpg" height="300px" width="300px" class="nteam"></center>
+          <div class="details">
+            <h3><a href="https://www.facebook.com/anupkadam01">Anup Kadam</a></h3>
+            <p>OSS Club Faculty Incharge</p>
+            <div class="social">
+              <a href=""><i class="fa fa-twitter"></i></a>
+              <a href="https://www.facebook.com/anupkadam01"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.linkedin.com/in/anup-kadam-9b04166/"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+        <div class="row" style="padding: 30px;">
+          <div class="col-sm speaker"><center><img src="img/speakers/1.jpg" height="300px" width="300px" class="nteam"></center>
+            <div class="details">
+              <h3><a href="https://www.facebook.com/armish24">Arpit Mishra</a></h3>
+              <p> OSS Club Incharge</p>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href="https://www.facebook.com/armish24"><i class="fa fa-facebook"></i></a>
+                <a href="https://github.com/armish24"><i class="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/arpit-kumar-mishra/"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+            </div>
+          <div class="col-sm speaker"><center><img src="img/speakers/3.jpg" height="300px" width="300px" class="nteam"></center>
+            <div class="details">
+              <h3><a href="https://www.facebook.com/NilishaNeig">Shalini Negi</a></h3>
+              <p>OSS Club Incharge</p>
+              <div class="social">
+                <a href="https://twitter.com/shalini27575300"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.facebook.com/NilishaNeig"><i class="fa fa-facebook"></i></a>
+                <a href="https://github.com/ashalininegihere"><i class="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/shlnnegi/"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm speaker"><center><img src="img/speakers/6.JPG" height="300px" width="300px" class="nteam"></center>
+            <div class="details">
+              <h3><a href="https://www.facebook.com/shellkore">Shailesh Kumar Sahu</a></h3>
+              <p> InNerve Management Head</p>
+              <div class="social">
+                <a href="https://twitter.com/shellkoresahu"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.facebook.com/shellkore"><i class="fa fa-facebook"></i></a>
+                <a href="https://github.com/shellkore"><i class="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/shellkore/"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="padding: 30px;">
+          <div class="col-sm speaker"><center><img src="img/speakers/5.JPG" height="300px" width="300px" class="nteam"></center>
+            <div class="details">
+              <h3><a href="https://www.facebook.com/profile.php?id=100008241159100">Shubham Singh</a></h3>
+              <p>InNerve Technical Head </p>
+              <div class="social">
+                <a href="https://twitter.com/CHILL__hai"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100008241159100"><i class="fa fa-facebook"></i></a>
+                <a href="https://github.com/shubham7298"><i class="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/shubham-singh7298/"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm speaker"><center><img src="img/speakers/7.JPG" height="300px" width="300px" class="nteam"></center>
+            <div class="details">
+              <h3><a href="https://www.facebook.com/skypankaj443">Pankaj Yadav</a></h3>
+              <p>InNerve Sponsorship Head</p>
+              <div class="social">
+                <a href="https://twitter.com/iampankaj443?s=07"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.facebook.com/skypankaj443"><i class="fa fa-facebook"></i></a>
+                <a href="https://github.com/pankaj443"><i class="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/pankaj-yadav-953b51177/"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm speaker"><center><img src="img/speakers/4.JPG" height="300px" width="300px" class="nteam"></center>
+            <div class="details">
+              <h3><a href="https://www.facebook.com/shivam.pathak.188">Shivam Pathak</a></h3>
+              <p> InNerve Marketing Head</p>
+              <div class="social">
+                <a href="https://twitter.com/Pathak_codes"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.facebook.com/shivam.pathak.188"><i class="fa fa-facebook"></i></a>
+                <a href="https://github.com/pathakcodes"><i class="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/shivam-kumar-pathak-6aa512113/"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </section>
+    <!-- sponsors -->
+   
+    <div style="background-image : url('img/pattern.png');background-size: cover;">
+    <h1
+    style="text-align: center;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+    <b >Sponsor Us</b></h1>
+   <a download="img/sponsor.png">
+    <div id="spons"><img src="img/sponsor.png" class="csponsor" id="msponsor" onclick="document.getElementById('id02').style.display='block';"></div>
+   </a>
+      </div>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer" style="height:14rem;" >
+    <div class="footer-top">
+      <div class="container" style="height:auto;">
+        <div class="row" style="margin-bottom:0px;">
+
+         <div class="col-lg-4 col-md-6 footer-contact" style="height:auto;">
+            <h4>Contact Us</h4>
+            <p>
+              Army Institute Of Technology <br>
+              Dighi, Pune, 411015<br>
+              Maharashtra <br>
+              <strong>Phone:</strong> +91 9325 611 554, +91 9919 098 303<br>
+              <strong>Email:</strong> ossclub@aitpune.edu.in<br>
+            </p>
+
+            <div class="social-links">
+              <a href="https://twitter.com/innerve24hrs" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.facebook.com/groups/ossclubait/" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/innervehack2k19" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/company/open-source-software-club/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 footer-info js-tilt" id="mimage" >
+            <img src="img/innerve.png" width="250px" style="height: 250px;">
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-info" style="float: left;" id="mcontact">
+            <form id="contact_form">
+              <h3>Contact</h3>
+                <label>Email</label><br/>
+               <input type="text" class="form-control" style="height: 35px;" id="contact_email">
+
+                <label>Message</label><br>
+                <input class="form-control" style="height:60px;" id="contact_message">&nbsp;&nbsp;<br>
+                <button class="btn btn-success form-control" type="submit">Send Message</button>
+              </form>
+
+            
+          </div>
+
+
+
+         
+
+          <div class="col-lg-2 col-md-6 footer-contact" style="height:auto;">
+              <div align=center>
+                  <p id="view_show" style="font-size: 20px;display: inline;"></p> <p style="display: inline;font-size:20px;">Views</p><br><br>
+                    <img src="img/frame.png" height="200rem" width="150rem">
+              </div></div>
+              
+        </div>
+      </div>
+    </div>
+
+  
+      </div>
+    </div>
+  </footer>
+  <!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
+<script src="./js/firestore.js"></script>
+  <!-- <script src="./js/firebase.js"></script> -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/venobox/venobox.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+  <!--typed js-->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+
+  <!--Particles JS-->
+  <script src="./js/particles.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    
+    var typed = new Typed('#typed', {
+      stringsElement: '#typed-strings',
+      typeSpeed: 100
+    });
+    // Get the modal
+    var modal = document.getElementById('id01');
+    var modal_new = document.getElementById('id02');
+    var modal_register = document.getElementById('id03');
+
+    // When the user clicks anywhere outside of the modal, close it
+    
+    $('body').click(function () {
+        if (event.target == modal || event.target == modal_new || event.target == modal_register) {
+        modal.style.display = "none";
+        modal_new.style.display = "none";
+        modal_register.style.display = "none";
+      }});
+
+    
+
+    document.getElementById('register').addEventListener('submit', sendemail);
+      function sendemail(e) {
+        e.preventDefault();
+        var dest = document.getElementById("sub").value;
+        var name = document.getElementById("1").value;
+        var str = "https://us-central1-innerve-a43dd.cloudfunctions.net/sendMail?dest=";
+        var name = document.getElementById("1").value;
+        str += dest;
+        str += "&name=";
+        str += name;
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', str, true);
+        xhr.send();
+        if (xhr.status = 200) { swal("An Email regarding the event have been sent to you!!") }
+        else { window.alert("Sorry!! There seems to be an error... ") }
+      }
+    </script>
+
+    <script>
+    $(document).mousemove(function(event) {
+  windowWidth = $(window).width();
+  windowHeight = $(window).height();
+
+  mouseXpercentage = Math.round(event.pageX / windowWidth * 100);
+  mouseYpercentage = Math.round(event.pageY / windowHeight * 100);
+
+   $('.radial-gradient').css('background', 'radial-gradient(at ' + mouseXpercentage + '% ' + mouseYpercentage + '%, rgba(0,0,20,0.3), rgba(26,35,120,0.5))');
+ });
+
+ function hide_reg(){
+   document.getElementById('id01').style.display = 'none';
+ }
+
+    </script>
+
+     
+     
+
+
+</body>
+
+</html>
